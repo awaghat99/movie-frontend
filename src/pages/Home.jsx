@@ -3,7 +3,7 @@ import Hero from "../sections/Hero";
 
 const Home = () => {
   return (
-    <main className="text-red-200">
+    <main>
       <section>
         <Hero />
       </section>

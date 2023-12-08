@@ -9,9 +9,11 @@ export default {
       colors: {
         navy: "#05151E",
         green: "#38A935",
+        "semi-gray": "#243145c2",
       },
       backgroundImage: {
         hero: "url('./src/assets/images/placeHolderPoster.jpg')",
+        search: "url('./src/assets/icons/search.svg')",
       },
     },
   },
