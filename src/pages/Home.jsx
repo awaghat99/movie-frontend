@@ -1,5 +1,6 @@
 import React from "react";
 import Hero from "../sections/Hero";
+import HomeMovies from "../sections/HomeMovies";
 
 const Home = (props) => {
   return (
@@ -7,8 +8,8 @@ const Home = (props) => {
       <section>
         <Hero popularData={props.popularData} />
       </section>
-      <section className="bg-navy h-screen">
-        <h1>Test</h1>
+      <section className="bg-navy pt-28 max-sm:pt-64 text-white padding-x">
+        <HomeMovies />
       </section>
     </main>
   );
