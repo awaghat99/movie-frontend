@@ -12,7 +12,7 @@ export default {
         "semi-gray": "#243145c2",
       },
       backgroundImage: {
-        hero: "url('./src/assets/images/placeHolderPoster.jpg')",
+        hero: "url('https://image.tmdb.org/t/p/original/zIYROrkHJPYB3VTiW1L9QVgaQO.jpg')",
         search: "url('./src/assets/icons/search.svg')",
       },
     },

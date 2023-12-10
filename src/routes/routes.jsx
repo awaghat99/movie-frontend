@@ -3,10 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home.jsx";
 import MovieDetail from "../pages/MovieDetail.jsx";
 
-const AppRoutes = () => {
+const AppRoutes = (props) => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home popularData={props.popularData} />} />
       <Route path="/movie" element={<MovieDetail />} />
     </Routes>
   );
