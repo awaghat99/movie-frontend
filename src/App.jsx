@@ -5,8 +5,10 @@ import { fetchPopularData } from "./utils/fetchData";
 
 const App = () => {
   const [popularData, setpopularData] = useState();
+
   useEffect(() => {
-    const fetchDataAsync = async () => {
+    // Fetch popular Movies for the Hero Section
+    const fetchPopularDataAsync = async () => {
       try {
         const data = await fetchPopularData();
         setpopularData(data);
@@ -15,7 +17,7 @@ const App = () => {
       }
     };
 
-    fetchDataAsync();
+    fetchPopularDataAsync();
   }, []);
 
   return (

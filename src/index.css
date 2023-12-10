@@ -6,7 +6,7 @@
 
 @layer utilities {
   .padding-x {
-    @apply sm:px-24 px-6;
+    @apply lg:px-24 px-6;
   }
 
   .padding-left {
