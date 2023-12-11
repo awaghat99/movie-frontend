@@ -9,7 +9,7 @@ const Home = (props) => {
         <Hero popularData={props.popularData} />
       </section>
       <section className="bg-navy pt-28 max-sm:pt-64 text-white padding-x">
-        <HomeMovies />
+        <HomeMovies trendingData={props.trendingData} />
       </section>
     </main>
   );

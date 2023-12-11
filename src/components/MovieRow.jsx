@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import fire from "../assets/icons/fire.svg";
 import MovieRowCard from "./MovieRowCard";
+import rightArrow from "../assets/icons/rightArrow.svg";
+import leftArrow from "../assets/icons/leftArrow.svg";
 
 const MovieRow = (props) => {
-  const movies = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19];
   const scrollContainerRef = useRef(null);
 
   const scroll = (direction) => {
@@ -18,34 +19,36 @@ const MovieRow = (props) => {
   };
 
   return (
-    <div className="mb-24">
-      <div className="flex uppercase text-lg mb-20">
+    <div className="mb-24 relative">
+      <div className="flex uppercase text-lg mb-16">
         <img src={fire} alt="fire icon" className="w-6 mr-6 max-sm:mr-2" />
         <h2>{props.category}</h2>
       </div>
 
       <div className="flex flex-nowrap overflow-hidden scroll-smooth py-2" ref={scrollContainerRef}>
-        {movies.map((movie, index) => (
-          <div
-            key={index}
-            className="min-w-[16.66%] pr-6 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[33.33%]">
-            <MovieRowCard />
-          </div>
-        ))}
+        {props.trendingData &&
+          props.trendingData.results.map((movie, index) => (
+            <div
+              key={index}
+              className="min-w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%]">
+              <MovieRowCard movieData={movie} />
+            </div>
+          ))}
       </div>
-      <button
-        onClick={() => {
-          scroll("right");
-        }}>
-        Go Right
-      </button>
-
-      <button
-        onClick={() => {
-          scroll("left");
-        }}>
-        Go Left
-      </button>
+      <div className=" w-[110%] left-[-5%] top-1/2 absolute flex justify-between">
+        <button
+          onClick={() => {
+            scroll("left");
+          }}>
+          <img src={leftArrow} alt="left arrow" className="w-6 bg-green rounded-full py-1 px-1 sm:w-10" />
+        </button>
+        <button
+          onClick={() => {
+            scroll("right");
+          }}>
+          <img src={rightArrow} alt="right arrow" className="w-6 bg-green rounded-full py-1 px-1 sm:w-10" />
+        </button>
+      </div>
     </div>
   );
 };

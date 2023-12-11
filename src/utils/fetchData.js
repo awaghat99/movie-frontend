@@ -21,3 +21,16 @@ export const fetchPopularData = async () => {
     console.error(err);
   }
 };
+
+export const fetchTrendingData = async () => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/trending/movie/week?language=en-US&api_key=${api_key}`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};

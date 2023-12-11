@@ -6,7 +6,7 @@ import MovieDetail from "../pages/MovieDetail.jsx";
 const AppRoutes = (props) => {
   return (
     <Routes>
-      <Route path="/" element={<Home popularData={props.popularData} />} />
+      <Route path="/" element={<Home popularData={props.popularData} trendingData={props.trendingData} />} />
       <Route path="/movie" element={<MovieDetail />} />
     </Routes>
   );
