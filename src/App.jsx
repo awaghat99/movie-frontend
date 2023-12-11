@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/routes";
-import { fetchPopularData, fetchTrendingData } from "./utils/fetchData";
+import {
+  fetchPopularData,
+  fetchTrendingData,
+  fetchNowPlayingData,
+  fetchUpcomingData,
+} from "./utils/fetchData";
 
 const App = () => {
-  const [popularData, setpopularData] = useState();
+  const [popularData, setPopularData] = useState();
   const [trendingData, setTrendingData] = useState();
+  const [nowPlayingData, setNowPlayingData] = useState();
+  const [upcomingData, setUpcomingData] = useState();
 
   useEffect(() => {
     // Fetch popular Movies for the Hero Section
     const fetchPopularDataAsync = async () => {
       try {
         const data = await fetchPopularData();
-        setpopularData(data);
+        setPopularData(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -27,14 +34,39 @@ const App = () => {
       }
     };
 
+    const fetchNowPlayingDataAsync = async () => {
+      try {
+        const data = await fetchNowPlayingData();
+        setNowPlayingData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const fetchUpcomingDataAsync = async () => {
+      try {
+        const data = await fetchUpcomingData();
+        setUpcomingData(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
     fetchPopularDataAsync();
     fetchTrendingDataAsync();
+    fetchUpcomingDataAsync();
+    fetchNowPlayingDataAsync();
   }, []);
 
   return (
     <div>
       <BrowserRouter>
-        <AppRoutes popularData={popularData} trendingData={trendingData} />
+        <AppRoutes
+          popularData={popularData}
+          trendingData={trendingData}
+          nowPlayingData={nowPlayingData}
+          upcomingData={upcomingData}
+        />
       </BrowserRouter>
     </div>
   );

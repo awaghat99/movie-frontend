@@ -20,17 +20,17 @@ const MovieRow = (props) => {
 
   return (
     <div className="mb-24 relative">
-      <div className="flex uppercase text-lg mb-16">
-        <img src={fire} alt="fire icon" className="w-6 mr-6 max-sm:mr-2" />
+      <div className="flex uppercase text-lg mb-12">
+        <img src={props.icon} alt="fire icon" className="w-6 mr-6 max-sm:mr-2" />
         <h2>{props.category}</h2>
       </div>
 
       <div className="flex flex-nowrap overflow-hidden scroll-smooth py-2" ref={scrollContainerRef}>
-        {props.trendingData &&
-          props.trendingData.results.map((movie, index) => (
+        {props.categoryData &&
+          props.categoryData.results.map((movie, index) => (
             <div
               key={index}
-              className="min-w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%]">
+              className="min-w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%] max-sm:aspect-[0.45]">
               <MovieRowCard movieData={movie} />
             </div>
           ))}

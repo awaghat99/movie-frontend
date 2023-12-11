@@ -34,3 +34,29 @@ export const fetchTrendingData = async () => {
     console.error(err);
   }
 };
+
+export const fetchUpcomingData = async () => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key=${api_key}`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const fetchNowPlayingData = async () => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${api_key}`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
