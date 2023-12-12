@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MovieRowCard = (props) => {
   // Function to format the release date
@@ -11,7 +12,7 @@ const MovieRowCard = (props) => {
   const backgroundImageUrl = `url(https://image.tmdb.org/t/p/original/${props.movieData.poster_path})`;
 
   return (
-    <div className="w-full h-full font-inter">
+    <Link to={`movie/${props.movieData && props.movieData.id}`} className="w-full h-full font-inter">
       <div
         style={{ backgroundImage: backgroundImageUrl }}
         className="w-full h-[75%] bg-cover bg-center rounded-xl"></div>
@@ -24,7 +25,7 @@ const MovieRowCard = (props) => {
           <p className="rounded-md border-yellow-300 border-[1px] px-1 py-1">Theater</p>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

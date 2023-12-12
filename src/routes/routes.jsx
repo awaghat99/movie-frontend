@@ -17,7 +17,7 @@ const AppRoutes = (props) => {
           />
         }
       />
-      <Route path="/movie" element={<MovieDetail />} />
+      <Route path="/movie/:id" element={<MovieDetail />} />
     </Routes>
   );
 };

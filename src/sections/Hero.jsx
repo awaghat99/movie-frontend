@@ -33,7 +33,11 @@ const Hero = (props) => {
           <h1 className="uppercase tracking-tighter text-4xl max-sm:text-xl">
             {dataToDisplay && dataToDisplay.title}
           </h1>
-          <Link className="bg-green w-fit rounded-md px-4 py-2 text-sm uppercase">Movie Details</Link>
+          <Link
+            to={`movie/${dataToDisplay && dataToDisplay.id}`}
+            className="bg-green w-fit rounded-md px-4 py-2 text-sm uppercase">
+            Movie Details
+          </Link>
         </div>
         <div className="flex absolute z-10 -bottom-6 w-full padding-x justify-between flex-wrap max-sm:gap-y-3 max-sm:-bottom-[35vw]">
           {props.popularData &&

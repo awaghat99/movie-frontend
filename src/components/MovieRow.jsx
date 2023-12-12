@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import fire from "../assets/icons/fire.svg";
 import MovieRowCard from "./MovieRowCard";
 import rightArrow from "../assets/icons/rightArrow.svg";
 import leftArrow from "../assets/icons/leftArrow.svg";
@@ -35,13 +34,15 @@ const MovieRow = (props) => {
             </div>
           ))}
       </div>
-      <div className=" w-[110%] left-[-5%] top-1/2 absolute flex justify-between">
+      <div className="left-[-5%] top-1/2 absolute max-lg:left-[-2%]">
         <button
           onClick={() => {
             scroll("left");
           }}>
           <img src={leftArrow} alt="left arrow" className="w-6 bg-green rounded-full py-1 px-1 sm:w-10" />
         </button>
+      </div>
+      <div className="right-[-5%] top-1/2 absolute max-lg:right-[-2%]">
         <button
           onClick={() => {
             scroll("right");

@@ -60,3 +60,16 @@ export const fetchNowPlayingData = async () => {
     console.error(err);
   }
 };
+
+export const fetchMovieDetailData = async (id) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits%2Csimilar&language=en-US&api_key=${api_key}`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};
