@@ -64,7 +64,7 @@ export const fetchNowPlayingData = async () => {
 export const fetchMovieDetailData = async (id) => {
   try {
     const response = await fetch(
-      `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits%2Csimilar&language=en-US&api_key=${api_key}`,
+      `https://api.themoviedb.org/3/movie/${id}?append_to_response=credits%2Csimilar%2Cwatch%2Fproviders&language=en-US&api_key=${api_key}`,
       options
     );
     const data = await response.json();

@@ -49,7 +49,10 @@ const MovieHero = (props) => {
           </div>
         </div>
         <div className="flex absolute z-10 -bottom-6 w-full padding-x justify-between flex-wrap max-sm:gap-y-3 max-sm:-bottom-[35vw] ">
-          <MovieDetailCard title="rating" text={props.movieDetail && props.movieDetail.vote_average} />
+          <MovieDetailCard
+            title="rating"
+            text={props.movieDetail && props.movieDetail.vote_average.toFixed(1)}
+          />
           <MovieDetailCard
             title="release"
             text={props.movieDetail && formatDate(props.movieDetail.release_date)}
