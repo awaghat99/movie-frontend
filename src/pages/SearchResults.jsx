@@ -21,10 +21,6 @@ const SearchResults = () => {
     fetchSearchResultsAsync();
   }, [term]);
 
-  useEffect(() => {
-    console.log(searchResultsData);
-  }, [searchResultsData]);
-
   return (
     <main className="bg-navy min-h-screen padding-x">
       <div>
