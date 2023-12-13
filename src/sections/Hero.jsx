@@ -27,7 +27,9 @@ const Hero = (props) => {
   return (
     <section className="relative">
       <div
-        style={{ backgroundImage: backgroundImageUrl }}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(5, 22, 30, 0.6), rgb(5, 22, 30)), ${backgroundImageUrl} `,
+        }}
         className=" w-full aspect-[2.5] bg-cover bg-center max-sm:aspect-[1.25] relative">
         <div className="padding-x flex flex-col h-full justify-center gap-y-6 text-white font-bold  font-inter ">
           <h1 className="uppercase tracking-tighter text-4xl max-sm:text-xl">

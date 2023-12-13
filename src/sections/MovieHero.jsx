@@ -33,7 +33,9 @@ const MovieHero = (props) => {
   return (
     <section>
       <div
-        style={{ backgroundImage: backgroundImageUrl }}
+        style={{
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2), rgba(5, 22, 30, 0.6), rgb(5, 22, 30)), ${backgroundImageUrl} `,
+        }}
         className="w-full aspect-[2.5] bg-cover bg-center max-sm:aspect-[1.25] relative">
         <div className="h-[25vh] w-full absolute bg-gradient-to-t from-navy -bottom-0 z-[5] max-sm:h-[10vh]"></div>
         <div className="padding-x flex flex-col h-full justify-center gap-y-2 text-white font-bold  font-inter ">
