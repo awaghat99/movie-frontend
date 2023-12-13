@@ -6,8 +6,10 @@ const Search = () => {
 
   const navigate = useNavigate();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     navigate(`/movie/search/${searchTerm}`);
+    setSearchTerm("");
   };
 
   return (
