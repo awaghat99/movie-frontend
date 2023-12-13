@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter } from "react-router-dom";
 import AppRoutes from "./routes/routes";
+import Header from "./components/Header";
 import {
   fetchPopularData,
   fetchTrendingData,
@@ -61,6 +62,7 @@ const App = () => {
   return (
     <div>
       <BrowserRouter>
+        <Header />
         <AppRoutes
           popularData={popularData}
           trendingData={trendingData}

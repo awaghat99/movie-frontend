@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useParams } from "react-router-dom";
 
 const MovieRowCard = (props) => {
   // Function to format the release date
@@ -8,6 +8,15 @@ const MovieRowCard = (props) => {
     const formattedDate = new Date(dateString).toLocaleDateString("en-US", options);
     return formattedDate;
   };
+
+  const { id } = useParams();
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 500);
+  }, [id]);
 
   const backgroundImageUrl =
     props.movieData &&

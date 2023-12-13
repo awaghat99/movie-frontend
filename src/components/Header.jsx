@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className=" w-full font-inter absolute z-10 padding-x pt-4 flex justify-between items-center">
-      <p className="text-xl text-white max-sm:text-md">
+      <Link to="/" className="text-xl text-white max-sm:text-md">
         The <br />
         <span className="uppercase font-bold text-2xl max-sm:text-lg">Trailers</span>
-      </p>
+      </Link>
       <form className="flex text-xs py-2 px-3 rounded-md  bg-semi-gray backdrop-blur-sm ">
         <input
           type="search"
