@@ -7,9 +7,11 @@ const Cast = (props) => {
       <div className="flex flex-wrap gap-y-4 gap-x-1 mt-4">
         {props.movieDetail &&
           props.movieDetail.credits.cast.slice(0, 9).map((actor, index) => {
-            const backgroundImageUrl = `url(
+            const backgroundImageUrl = actor.profile_path
+              ? `url(
                 "https://image.tmdb.org/t/p/original/${actor.profile_path}"
-              )`;
+              )`
+              : `url("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png")`;
             return (
               <div className="w-[18%] text-center max-sm:w-[32%]" key={index}>
                 <div

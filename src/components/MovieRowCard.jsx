@@ -9,7 +9,11 @@ const MovieRowCard = (props) => {
     return formattedDate;
   };
 
-  const backgroundImageUrl = `url(https://image.tmdb.org/t/p/original/${props.movieData.poster_path})`;
+  const backgroundImageUrl =
+    props.movieData &&
+    (props.movieData.poster_path
+      ? `url(https://image.tmdb.org/t/p/original/${props.movieData.poster_path})`
+      : "url('https://via.placeholder.com/600/808080/000000?text=No+Poster+Available')");
 
   return (
     <Link to={`/movie/${props.movieData && props.movieData.id}`} className="w-full h-full font-inter">

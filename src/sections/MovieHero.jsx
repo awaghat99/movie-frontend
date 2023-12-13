@@ -3,7 +3,10 @@ import MovieDetailCard from "../components/MovieDetailCard";
 
 const MovieHero = (props) => {
   const backgroundImageUrl =
-    props.movieDetail && `url(https://image.tmdb.org/t/p/original/${props.movieDetail.backdrop_path})`;
+    props.movieDetail &&
+    (props.movieDetail.backdrop_path
+      ? `url(https://image.tmdb.org/t/p/original/${props.movieDetail.backdrop_path})`
+      : "url('https://via.placeholder.com/600/808080/000000?text=No+Poster+Available')");
 
   const formatBudget = (budget) => {
     if (budget >= 1000000) {
