@@ -29,7 +29,7 @@ const MovieRow = (props) => {
           props.categoryData.results.map((movie, index) => (
             <div
               key={index}
-              className="min-w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%] max-sm:aspect-[0.45]">
+              className="min-w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%] max-sm:aspect-[0.4]">
               <MovieRowCard movieData={movie} />
             </div>
           ))}
