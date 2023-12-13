@@ -73,3 +73,16 @@ export const fetchMovieDetailData = async (id) => {
     console.error(err);
   }
 };
+
+export const fetchSearchResultsData = async (searchTerm) => {
+  try {
+    const response = await fetch(
+      `https://api.themoviedb.org/3/search/movie?query=${searchTerm}&include_adult=false&language=en-US&page=1&api_key=${api_key}`,
+      options
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error(err);
+  }
+};

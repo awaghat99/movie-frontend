@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Search from "./Search";
 
 const Header = () => {
   return (
@@ -8,14 +9,7 @@ const Header = () => {
         The <br />
         <span className="uppercase font-bold text-2xl max-sm:text-lg">Trailers</span>
       </Link>
-      <form className="flex text-xs py-2 px-3 rounded-md  bg-semi-gray backdrop-blur-sm ">
-        <input
-          type="search"
-          placeholder="Search for a movie"
-          className="bg-transparent border-0 focus:outline-none text-slate-200 max-sm:w-24"
-        />
-        <button type="submit" className="w-[16px] bg-search bg-contain bg-no-repeat"></button>
-      </form>
+      <Search />
     </header>
   );
 };
