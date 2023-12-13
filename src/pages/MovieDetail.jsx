@@ -3,6 +3,7 @@ import { fetchMovieDetailData } from "../utils/fetchData";
 import { useParams } from "react-router-dom";
 import MovieHero from "../sections/MovieHero";
 import MovieInfo from "../sections/MovieInfo";
+import MovieRow from "../components/MovieRow";
 
 const MovieDetail = () => {
   const [movieDetail, setMovieDetail] = useState();
@@ -29,6 +30,13 @@ const MovieDetail = () => {
       </section>
       <section className="padding-x bg-navy pt-28 max-sm:pt-64">
         <MovieInfo movieDetail={movieDetail} />
+      </section>
+      <section className="padding-x bg-navy pb-8  text-white pt-20">
+        <MovieRow
+          category="Similar Movies You May Like"
+          categoryData={movieDetail && movieDetail.similar}
+          movieDetailPage={true}
+        />
       </section>
     </main>
   );

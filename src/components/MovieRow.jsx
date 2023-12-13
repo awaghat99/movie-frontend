@@ -20,8 +20,8 @@ const MovieRow = (props) => {
   return (
     <div className="mb-24 relative">
       <div className="flex uppercase text-lg mb-12">
-        <img src={props.icon} alt="fire icon" className="w-6 mr-6 max-sm:mr-2" />
-        <h2>{props.category}</h2>
+        {props.icon && <img src={props.icon} alt="fire icon" className="w-6 mr-6 max-sm:mr-2" />}
+        <h2 className={`font-inter ${props.movieDetailPage && "text-slate-500"}`}>{props.category}</h2>
       </div>
 
       <div className="flex flex-nowrap overflow-hidden scroll-smooth py-2" ref={scrollContainerRef}>

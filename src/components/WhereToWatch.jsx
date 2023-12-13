@@ -64,7 +64,7 @@ const WhereToWatch = (props) => {
                       <div
                         key={index}
                         style={{ backgroundImage: backgroundImageUrl }}
-                        className="w-[20%] aspect-square rounded-full bg-cover bg-center max-md:w-[10%] border-red-500 border-2">
+                        className="w-[13%] aspect-square rounded-full bg-cover bg-center max-md:w-[10%]">
                         {" "}
                       </div>
                     );

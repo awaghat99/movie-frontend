@@ -12,7 +12,7 @@ const MovieRowCard = (props) => {
   const backgroundImageUrl = `url(https://image.tmdb.org/t/p/original/${props.movieData.poster_path})`;
 
   return (
-    <Link to={`movie/${props.movieData && props.movieData.id}`} className="w-full h-full font-inter">
+    <Link to={`/movie/${props.movieData && props.movieData.id}`} className="w-full h-full font-inter">
       <div
         style={{ backgroundImage: backgroundImageUrl }}
         className="w-full h-[75%] bg-cover bg-center rounded-xl"></div>
