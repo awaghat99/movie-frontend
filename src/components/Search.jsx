@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import search from "../assets/icons/search.svg";
 
 const Search = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -8,6 +9,10 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (searchTerm === "") {
+      window.alert("Please do not submit an empty search");
+      return;
+    }
     navigate(`/movie/search/${searchTerm}`);
     setSearchTerm("");
   };
@@ -23,7 +28,9 @@ const Search = () => {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
-      <button type="submit" className="w-[16px] bg-search bg-contain bg-no-repeat"></button>
+      <button type="submit" className="w-[16px]">
+        <img src={search} alt="magnifying glass" className="object-cover object-center" />
+      </button>
     </form>
   );
 };

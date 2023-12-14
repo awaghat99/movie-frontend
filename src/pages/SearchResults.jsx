@@ -13,6 +13,7 @@ const SearchResults = () => {
       try {
         const data = await fetchSearchResultsData(term);
         setSearchResultsData(data);
+        console.log(data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -24,19 +25,23 @@ const SearchResults = () => {
   return (
     <main className="bg-navy min-h-screen padding-x">
       <div>
-        <p className="text-slate-500 text-6xl uppercase text-inter font-bold text-center pt-36 mb-24">
+        <p className="text-slate-500 text-6xl uppercase text-inter font-bold text-center pt-36 mb-24 max-sm:text-2xl">
           You Searched For:
           <br /> {term}{" "}
         </p>
       </div>
       <div className="w-full flex flex-wrap justify-center text-white">
         {searchResultsData &&
-          searchResultsData.results.map((movie, index) => (
-            <div
-              key={index}
-              className=" w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%] max-sm:aspect-[0.45]">
-              <MovieRowCard movieData={movie} />
-            </div>
+          (searchResultsData.results.length !== 0 ? (
+            searchResultsData.results.map((movie, index) => (
+              <div
+                key={index}
+                className=" w-[16.66666%] px-3 box-border aspect-[0.5] max-lg:min-w-[20%] max-md:min-w-[25%] max-sm:min-w-[33.3334%] max-sm:aspect-[0.45]">
+                <MovieRowCard movieData={movie} />
+              </div>
+            ))
+          ) : (
+            <p className="text-4xl text-white max-sm:text-lg font-inter uppercase">No results</p>
           ))}
       </div>
     </main>

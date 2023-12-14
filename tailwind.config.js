@@ -11,9 +11,6 @@ export default {
         green: "#38A935",
         "semi-gray": "#243145c2",
       },
-      backgroundImage: {
-        search: "url('./src/assets/icons/search.svg')",
-      },
     },
   },
   plugins: [],
